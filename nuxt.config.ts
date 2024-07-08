@@ -7,10 +7,10 @@ export default defineNuxtConfig({
       title: 'Aprel_test',
     },
   },
+  ssr: true,
   nitro: {
     prerender: {
-      crawlLinks: true,
-      failOnError: false,
+      crawlLinks: false,
     },
   },
   runtimeConfig: {

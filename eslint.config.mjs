@@ -33,7 +33,7 @@ export default withNuxt([
       }],
       'vue/html-quotes': ['error', 'double'],
       'vue/multi-word-component-names': ['error', {
-        ignores: ['index', '[id]', 'default', 'simple', 'empty'],
+        ignores: ['index', '[id]', 'default', 'error', 'simple', 'empty'],
       }],
       'vue/no-unused-vars': ['error', {
         ignorePattern: '_',
