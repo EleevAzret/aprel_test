@@ -1,0 +1,1 @@
+import{v as e,t,x as o,_ as s}from"./CzGANIvT.js";const c={class:"application"},n=o("h1",null,"404",-1),r=[n];function a(i,d){return t(),e("div",c,r)}const _={},p=s(_,[["render",a]]);export{p as default};
