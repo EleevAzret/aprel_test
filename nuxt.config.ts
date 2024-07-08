@@ -4,7 +4,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      title: 'Aprel',
+      title: 'Aprel_test',
+    },
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      failOnError: false,
     },
   },
   runtimeConfig: {
