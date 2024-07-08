@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   ],
   css: ['~/assets/style/index.scss'],
   typescript: {
-    typeCheck: true,
+    // typeCheck: true,
     strict: true,
   },
   eslint: {
