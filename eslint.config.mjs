@@ -9,7 +9,7 @@ export default withNuxt([
       'quotes': ['error', 'single'],
       'no-console': 'warn',
       'no-debugger': 'warn',
-      'brace-style': ['error', '1tbs', { allowSingleLine: true }],
+      'brace-style': 'error',
       'arrow-parens': 'error',
       'quote-props': ['error', 'consistent'],
     },

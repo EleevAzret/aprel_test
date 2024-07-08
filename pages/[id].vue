@@ -9,8 +9,10 @@ const moviesStore = useMoviesStore()
 
 const route = useRoute()
 
-onMounted(() => {
-  if (!moviesStore.topMovies?.items) moviesStore.getTopMovies()
+onMounted(async () => {
+  if (!moviesStore.topMovies?.items) {
+    await useAsyncData('movies', () => moviesStore.getTopMovies().then(() => true))
+  }
 })
 
 watch(

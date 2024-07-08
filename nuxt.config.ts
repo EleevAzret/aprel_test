@@ -7,11 +7,8 @@ export default defineNuxtConfig({
       title: 'Aprel_test',
     },
   },
-  ssr: true,
-  nitro: {
-    prerender: {
-      crawlLinks: false,
-    },
+  routeRules: {
+    '/': { prerender: false },
   },
   runtimeConfig: {
     public: {

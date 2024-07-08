@@ -4,9 +4,7 @@ import MoviesList from '@/components/movies/MoviesList.vue'
 
 const moviesStore = useMoviesStore()
 
-onMounted(() => {
-  if (!moviesStore.topMovies?.items) moviesStore.getTopMovies()
-})
+await useAsyncData('movies', () => moviesStore.getTopMovies().then(() => true))
 
 defineProps<{
   listView?: boolean

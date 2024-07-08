@@ -43,7 +43,10 @@ export const useMoviesStore = defineStore('movies', () => {
         transformResponse(data: string): ResponseMoviesData {
           const parsedData: ResponseMoviesData = JSON.parse(data)
           return {
-            items: parsedData.docs?.map?.((item) => new Movie(item)),
+            items: parsedData.docs?.map?.((item) => {
+              const serializedItem = new Movie(item)
+              return JSON.parse(JSON.stringify(serializedItem))
+            }),
             page: parsedData.page,
             pages: parsedData.pages,
             total: parsedData.total,
@@ -52,7 +55,7 @@ export const useMoviesStore = defineStore('movies', () => {
       }) as ResponseMoviesData
 
       topMovies.value = response
-      searchResults.value = response.items
+      searchResults.value = response?.items
       resetPage()
     } catch (e) {
       console.info(e)
