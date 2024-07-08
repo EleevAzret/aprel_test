@@ -1,0 +1,47 @@
+@import '../utils/typography';
+@import '../utils/on-hover';
+
+.movie-card-container {
+  display: grid;
+  grid-template-rows: max-content;
+  grid-auto-rows: max-content;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: map-get($spacers, 4);
+}
+
+.movie-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: map-get($rounded, 'xl');
+
+  &:hover {
+    cursor: pointer;
+    &::after {
+      @include on-hover;
+    }
+  }
+}
+
+.movie-card-img {
+  aspect-ratio: 2/3;
+  border-radius: map-get($rounded, 'xl');
+}
+
+.movie-card-title {
+  padding-top: map-get($spacers, 2);
+  padding-right: map-get($spacers, 4);
+  padding-left: map-get($spacers, 4);
+  @include typography('subtitle');
+}
+
+.movie-card-subtitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: map-get($spacers, 4);
+  padding-left: map-get($spacers, 4);
+  padding-bottom: map-get($spacers, 2);
+  @include typography('caption')
+}

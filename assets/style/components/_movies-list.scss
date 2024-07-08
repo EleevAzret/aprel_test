@@ -1,0 +1,45 @@
+@import '../utils/typography';
+
+.movies-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: map-get($spacers, 2) 0;
+}
+
+.movies-list-item {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: map-get($spacers, 2) map-get($spacers, 4);
+  border-radius: map-get($rounded, 'xl');
+
+  &:hover {
+    cursor: pointer;
+    &::after {
+      @include on-hover;
+    }
+  }
+}
+
+.movies-list-item-avatar {
+  max-width: 65px;
+  aspect-ratio: 2/3;
+  border-radius: map-get($rounded, 'xl');
+}
+
+.movies-list-item-content {
+  padding: 0 map-get($spacers, 4);
+}
+
+.movies-list-item-title {
+  @include typography('h6');
+}
+
+.movies-list-item-subtitle {
+  display: flex;
+  align-items: center;
+  @include typography('subtitle');
+}
+

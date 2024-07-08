@@ -1,0 +1,9 @@
+.container {
+  padding: map-get($spacers, 4) 0;
+  max-width: 100%;
+  margin: 0 auto;
+
+  @media (min-width: map-get($breakpoints, 'lg')) {
+    max-width: 1200px;
+  }
+}

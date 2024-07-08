@@ -1,0 +1,6 @@
+@mixin typography($variable: 'body') {
+  font-size: map-get($typography, $variable, 'size');
+  font-weight: map-get($typography, $variable, 'weight');
+  line-height: map-get($typography, $variable, 'line-height');
+  letter-spacing: map-get($typography, $variable, 'letter-spacing');
+}

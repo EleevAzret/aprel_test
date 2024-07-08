@@ -1,0 +1,109 @@
+@use 'sass:map';
+@use 'sass:meta';
+
+$body-font-family: 'Roboto', sans-serif !default;
+$border-radius-root: 4px !default;
+
+$color-oxford-blue: #0E092B;
+$color-white: #FFFFFF;
+
+$color-background: $color-white;
+$color-on-surface: $color-oxford-blue;
+$color-on-hover: rgba(0, 0, 0, 0.085);
+
+$breakpoints: () !default;
+$breakpoints: map.deep-merge(
+  (
+    'xs': 0,
+    'sm': 600px,
+    'md': 960px,
+    'lg': 1280px,
+    'xl': 1920px,
+    'xxl': 2560px,
+  ),
+  $breakpoints
+);
+
+$rounded: () !default;
+$rounded: map.deep-merge(
+  (
+    0: 0,
+    'sm': $border-radius-root * .5,
+    null: $border-radius-root,
+    'lg': $border-radius-root * 2,
+    'xl': $border-radius-root * 6,
+    'pill': 9999px,
+    'circle': 50%,
+  ),
+  $rounded
+);
+
+$spacer: 4px !default;
+$spacers-steps: 16 !default;
+$spacers: () !default;
+@if (meta.type-of($spacers) == list) {
+  @for $i from 0 through $spacers-steps {
+    $spacers: map.merge($spacers, ($i: $spacer * $i))
+  }
+}
+
+$typography: () !default;
+$typography: map.deep-merge(
+  (
+    'h1': (
+      'size': 6rem,
+      'weight': 300,
+      'line-height': 1,
+      'letter-spacing': -.015625em,
+    ),
+    'h2': (
+      'size': 3.75rem,
+      'weight': 300,
+      'line-height': 1,
+      'letter-spacing': -.0083333333em,
+    ),
+    'h3': (
+      'size': 3rem,
+      'weight': 400,
+      'line-height': 1.05,
+      'letter-spacing': normal,
+    ),
+    'h4': (
+      'size': 2.125rem,
+      'weight': 400,
+      'line-height': 1.175,
+      'letter-spacing': .0073529412em,
+    ),
+    'h5': (
+      'size': 1.5rem,
+      'weight': 400,
+      'line-height': 1.333,
+      'letter-spacing': normal,
+    ),
+    'h6': (
+      'size': 1.25rem,
+      'weight': 500,
+      'line-height': 1.6,
+      'letter-spacing': .0125em,
+    ),
+    'subtitle': (
+      'size': 1rem,
+      'weight': normal,
+      'line-height': 1.75,
+      'letter-spacing': .009375em,
+    ),
+    'body': (
+      'size': 1rem,
+      'weight': 400,
+      'line-height': 1.5,
+      'letter-spacing': .03125em,
+    ),
+    'caption': (
+      'size': .75rem,
+      'weight': 400,
+      'line-height': 1.667,
+      'letter-spacing': .0333333333em,
+    ),
+  ),
+  $typography
+);

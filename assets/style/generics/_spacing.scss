@@ -1,0 +1,54 @@
+@for $i from 1 through $spacers-steps {
+  .pa-#{$i} {
+    padding: map-get($spacers, $i) !important;
+  }
+  .py-#{$i} {
+    padding-top: map-get($spacers, $i) !important;
+    padding-bottom: map-get($spacers, $i) !important;
+  }
+  .px-#{$i} {
+    padding-right: map-get($spacers, $i) !important;
+    padding-left: map-get($spacers, $i) !important;
+  }
+  .pl-#{$i} {
+    padding-left: map-get($spacers, $i) !important;
+  }
+  .pr-#{$i} {
+    padding-right: map-get($spacers, $i) !important;
+  }
+  .pb-#{$i} {
+    padding-bottom: map-get($spacers, $i) !important;
+  }
+  .pt-#{$i} {
+    padding-top: map-get($spacers, $i) !important;
+  }
+
+  .ma-#{$i} {
+    margin: map-get($spacers, $i) !important;
+  }
+  .my-#{$i} {
+    margin-top: map-get($spacers, $i) !important;
+    margin-bottom: map-get($spacers, $i) !important;
+  }
+  .mx-#{$i} {
+    margin-left: 0 map-get($spacers, $i) !important;
+    margin-right: 0 map-get($spacers, $i) !important;
+  }
+  .ml-#{$i} {
+    margin-left: map-get($spacers, $i) !important;
+  }
+  .mr-#{$i} {
+    margin-right: map-get($spacers, $i) !important;
+  }
+  .mt-#{$i} {
+    margin-top: map-get($spacers, $i) !important;
+  }
+  .mb-#{$i} {
+    margin-bottom: map-get($spacers, $i) !important;
+  }
+
+
+  .ga-#{$i} {
+    gap: map-get($spacers, $i) !important;
+  }
+}
