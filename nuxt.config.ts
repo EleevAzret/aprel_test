@@ -7,9 +7,7 @@ export default defineNuxtConfig({
       title: 'Aprel_test',
     },
   },
-  routeRules: {
-    '/': { ssr: false },
-  },
+  ssr: false,
   runtimeConfig: {
     public: {
       baseUrl: 'https://api.kinopoisk.dev/v1.4',
